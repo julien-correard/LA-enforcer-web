@@ -1,0 +1,26 @@
+body {
+  background: black;
+  color: #ffffff;
+  font-family: monospace;
+  margin: 0;
+  font-size: 17px;
+}
+
+#terminal {
+  padding: 20px;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#cursor {
+  animation: blink 1s step-end infinite;
+}
+
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
