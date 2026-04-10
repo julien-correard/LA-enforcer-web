@@ -1,4 +1,4 @@
-fetch("http://localhost:8080/scores")
+fetch("https://la-enforcer-server.onrender.com/scores")
   .then(res => res.json())
   .then(data => {
 
