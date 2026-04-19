@@ -1,29 +1,35 @@
 const output = document.getElementById("output");
+const status = document.getElementById("status");
 
-// 1. Afficher le cache immédiatement (si dispo)
 const cached = localStorage.getItem("scores");
 
+// 1. Cache immédiat
 if (cached) {
   displayScores(JSON.parse(cached));
+  status.textContent = "Checking for new scores...";
+} else {
+  status.textContent = "Connecting to server...";
 }
 
-// 2. Toujours fetch en arrière-plan
+// 2. Fetch
 fetch("https://la-enforcer-server.onrender.com/scores")
   .then(res => res.json())
   .then(data => {
     localStorage.setItem("scores", JSON.stringify(data));
     displayScores(data);
+    status.textContent = "Scores updated";
   })
   .catch(err => {
-    // si pas de cache → message erreur
     if (!cached) {
-      output.textContent = "Erreur connexion serveur";
+      output.textContent = "Connection error";
+      status.textContent = "Failed to connect";
+    } else {
+      status.textContent = "Server unavailable (using cache)";
     }
     console.error(err);
   });
 
-
-// Fonction d'affichage (ton code existant propre)
+// affichage
 function displayScores(data) {
   let text = "";
 

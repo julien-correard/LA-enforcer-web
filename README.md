@@ -9,6 +9,8 @@ Cette interface web permet d’afficher le classement des scores du jeu rétro D
 - Récupération des scores depuis une API REST
 - Affichage d’un leaderboard trié
 - Interface simple et légère en HTML / CSS / JavaScript
+- Mise en cache des scores via localStorage pour affichage immédiat
+- Indication de l’état de connexion (serveur en cours de réveil, indisponible, etc.)
 
 ## Détails techniques
 
