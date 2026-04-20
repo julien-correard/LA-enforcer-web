@@ -3,6 +3,11 @@ const status = document.getElementById("status");
 
 const cached = localStorage.getItem("scores");
 
+
+// On cache la dernière ligne, le prompt
+const promptLine = document.getElementById("prompt-line");
+promptLine.style.display = "none";
+
 // 1. Cache immédiat
 if (cached) {
   displayScores(JSON.parse(cached));
@@ -18,13 +23,16 @@ fetch("https://la-enforcer-server.onrender.com/scores")
     localStorage.setItem("scores", JSON.stringify(data));
     displayScores(data);
     status.textContent = "Scores updated";
+    showPrompt();
   })
   .catch(err => {
     if (!cached) {
       output.textContent = "Connection error";
       status.textContent = "Failed to connect";
+      showPrompt();
     } else {
       status.textContent = "Server unavailable (using cache)";
+      showPrompt();
     }
     console.error(err);
   });
@@ -44,4 +52,8 @@ function displayScores(data) {
   });
 
   output.textContent = text;
+}
+
+function showPrompt() {
+  promptLine.style.display = "block";
 }

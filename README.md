@@ -2,7 +2,7 @@
 
 ## Présentation
 
-Cette interface web permet d’afficher le classement des scores du jeu rétro DOS *LA Enforcer*.
+Cette interface web permet d’afficher le classement des scores du jeu rétro DOS *LA Enforcer*, elle est consultable [ici](https://julien-correard.github.io/LA-enforcer-web/).
 
 ## Fonctionnalités
 
@@ -22,7 +22,7 @@ Ce projet complète un système global comprenant :
 - un [jeu en C](https://github.com/julien-correard/LA-enforcer-game) (génération des scores)
 - un [client en Go](https://github.com/julien-correard/LA-enforcer-client) (envoi des scores)
 - un [serveur Spring Boot](https://github.com/julien-correard/LA-enforcer-server) (stockage des scores)
-- une [interface web en JavaScript](https://github.com/julien-correard/LA-enforcer-web) (consultation des scores)
+- une [interface web en JavaScript](https://github.com/julien-correard/LA-enforcer-web) (consultation des scores, disponible [ici](https://julien-correard.github.io/LA-enforcer-web/))
 
 ## Technologies utilisées
 
